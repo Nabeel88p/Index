@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل فني جديد - فني</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="auth-logo">
+                <a href="index.html"><img src="logo.png" alt="شعار فني"></a>
+            </div>
+            <h2>تسجيل حساب فني جديد</h2>
+            <p style="margin-bottom: 20px; color: #6c757d;">سيتم مراجعة طلبك من قبل الإدارة قبل تفعيل الحساب.</p>
+            <form id="register-form" class="auth-form">
+                <div id="error-message"></div>
+                 <div id="success-message" style="display: none;">تم إرسال طلب التسجيل بنجاح. سيتم مراجعته قريباً.</div>
+                <div class="input-group">
+                    <label for="name">الاسم الكامل</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">البريد الإلكتروني</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                 <div class="input-group">
+                    <label for="phone">رقم الهاتف</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                 <div class="input-group">
+                    <label for="service">التخصص</label>
+                    <select id="service" name="service" required>
+                        <option value="" disabled selected>-- اختر تخصصك --</option>
+                        <option value="كهرباء">كهرباء</option>
+                        <option value="تكييف">تكييف وتبريد</option>
+                        <option value="طاقة شمسية">طاقة شمسية</option>
+                        <option value="شاشات وأقمار صناعية">شاشات وأقمار صناعية</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="password">كلمة المرور</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                 <div class="input-group">
+                    <label for="confirm-password">تأكيد كلمة المرور</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+                <button type="submit" class="auth-button">إرسال طلب التسجيل</button>
+            </form>
+            <div class="auth-footer">
+                 <p>لديك حساب بالفعل؟ <a href="login.html">سجل الدخول</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="technician-register.js" type="module"></script>
+</body>
+</html>

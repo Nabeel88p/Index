@@ -1,0 +1,206 @@
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فني - خدمات الصيانة المنزلية</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Leaflet CSS for map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script type="importmap">
+      {
+        "imports": {
+          "canvas-confetti": "https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.module.mjs"
+        }
+      }
+    </script>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="شعار فني">
+                <h1>فني</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#services">خدماتنا</a>
+                <a href="#how-it-works">كيف نعمل</a>
+                <a href="#testimonials">آراء العملاء</a>
+                <a href="#contact">تواصل معنا</a>
+                <a href="track-order.html" class="track-btn">تتبع طلبك</a>
+                <a href="login.html" class="login-btn">تسجيل دخول الفنيين</a>
+            </div>
+            <div class="header-icons">
+                 <div id="notification-area" class="notification-icon" style="display: none;" title="لديك رسائل جديدة!">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                    <span class="notification-badge" style="display: none;"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>أفضل الفنيين لخدمتك في أي وقت</h2>
+                <p>صيانة منزلية سريعة وموثوقة. اطلب خدمة الآن بدون تسجيل.</p>
+                <button id="order-now-btn" class="cta-button">اطلب خدمة الآن</button>
+            </div>
+        </section>
+
+        <section id="services" class="services-section">
+            <h3>خدماتنا</h3>
+            <div class="services-grid">
+                <div class="service-card" data-service="كهرباء">
+                    <img src="icon-electricity.png" alt="أيقونة كهرباء">
+                    <h4>كهرباء</h4>
+                    <p>إصلاح جميع الأعطال الكهربائية وتمديدات الشبكات.</p>
+                </div>
+                <div class="service-card" data-service="تكييف">
+                    <img src="icon-ac.png" alt="أيقونة تكييف">
+                    <h4>تكييف وتبريد</h4>
+                    <p>صيانة، تركيب، وتنظيف وحدات التكييف المختلفة.</p>
+                </div>
+                <div class="service-card" data-service="طاقة شمسية">
+                    <img src="icon-solar.png" alt="أيقونة طاقة شمسية">
+                    <h4>طاقة شمسية</h4>
+                    <p>تصميم وتركيب أنظمة الطاقة الشمسية للمنازل.</p>
+                </div>
+                <div class="service-card" data-service="شاشات وأقمار صناعية">
+                    <img src="icon-tv.png" alt="أيقونة شاشات">
+                    <h4>شاشات وأقمار صناعية</h4>
+                    <p>تركيب الشاشات ووزن أطباق الأقمار الصناعية.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="how-it-works-section">
+            <h3>كيف نعمل؟</h3>
+            <div class="steps">
+                <div class="step">
+                    <span>1</span>
+                    <h4>اطلب الخدمة</h4>
+                    <p>اختر الخدمة التي تحتاجها وحدد تفاصيل طلبك بسهولة.</p>
+                </div>
+                <div class="step">
+                    <span>2</span>
+                    <h4>يصلك الفني</h4>
+                    <p>نرسل لك أفضل فني معتمد في منطقتك في الوقت المناسب لك.</p>
+                </div>
+                <div class="step">
+                    <span>3</span>
+                    <h4>أنجز عملك</h4>
+                    <p>يقوم الفني بإنجاز المهمة باحترافية وأمانة.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials-section">
+            <h3>آراء عملائنا</h3>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <img src="avatar1.png" alt="صورة عميل" class="testimonial-avatar">
+                    <p class="testimonial-text">"خدمة سريعة وممتازة! الفني كان محترفًا جدًا وحل المشكلة في وقت قياسي. أنصح بهم بشدة."</p>
+                    <div class="testimonial-author">أحمد ياسر</div>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="testimonial-card">
+                    <img src="avatar2.png" alt="صورة عميلة" class="testimonial-avatar">
+                    <p class="testimonial-text">"تجربة رائعة من البداية للنهاية. الموقع سهل الاستخدام والطلب لم يأخذ مني دقيقة واحدة. شكرًا لكم."</p>
+                    <div class="testimonial-author">فاطمة علي</div>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="testimonial-card">
+                    <img src="avatar3.png" alt="صورة عميل" class="testimonial-avatar">
+                    <p class="testimonial-text">"أفضل خدمة صيانة تكييف جربتها. الفني كان خبيرًا وشرح لي سبب العطل بوضوح. الأسعار كانت معقولة جدًا."</p>
+                    <div class="testimonial-author">خالد منصور</div>
+                    <div class="stars">★★★★★</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="toast" id="toast-notification"></div>
+
+    <footer id="contact">
+        <p>جميع الحقوق محفوظة © 2024 - فني</p>
+        <p>للتواصل: <a href="mailto:mohammedalkhatem2040@gmail.com">mohammedalkhatem2040@gmail.com</a></p>
+        <p>هاتف: <a href="tel:+249909204090">+249 90 920 4090</a></p>
+    </footer>
+
+    <!-- Order Modal -->
+    <div id="order-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <form id="order-form">
+                <div class="modal-header">
+                    <h3>طلب خدمة جديدة</h3>
+                    <p>الرجاء إكمال الخطوات التالية لطلب الخدمة</p>
+                </div>
+                
+                <div class="form-step active" data-step="1">
+                    <h4>الخطوة 1: اختر الخدمة</h4>
+                    <div id="modal-services-grid" class="services-grid">
+                       <!-- Service cards will be cloned here by JS -->
+                    </div>
+                     <p class="error-message" id="service-error" style="display:none;">الرجاء اختيار خدمة واحدة على الأقل.</p>
+                </div>
+
+                <div class="form-step" data-step="2">
+                    <h4>الخطوة 2: التفاصيل والموقع</h4>
+                    <label for="location">العنوان أو أقرب نقطة دالة (يمكنك تحريك الدبوس على الخريطة)</label>
+                    <input type="text" id="location" name="location" placeholder="مثال: الرياض، حي الملز، شارع الستين" required>
+                    <div id="map"></div>
+                    
+                    <label for="description">وصف مختصر للمشكلة</label>
+                    <textarea id="description" name="description" rows="3" placeholder="مثال: المكيف لا يبرد، يوجد التماس كهربائي..."></textarea>
+                </div>
+
+                <div class="form-step" data-step="3">
+                    <h4>الخطوة 3: الوقت وبيانات التواصل</h4>
+                    <label for="date">التاريخ المفضل</label>
+                    <input type="date" id="date" name="date" required>
+                    
+                    <label for="time">الوقت المفضل</label>
+                    <input type="time" id="time" name="time" required>
+                    
+                    <label for="name">الاسم الكامل</label>
+                    <input type="text" id="name" name="name" placeholder="الاسم الكامل" required>
+                    
+                    <label for="phone">رقم الهاتف</label>
+                    <input type="tel" id="phone" name="phone" placeholder="رقم الهاتف للتواصل" required>
+                </div>
+
+                <div class="form-step" data-step="4">
+                    <div class="confirmation-view">
+                        <h4>الخطوة 4: تأكيد الطلب</h4>
+                        <p>شكرًا لك! طلبك جاهز للإرسال.</p>
+                        <div class="summary">
+                            <h5>ملخص الطلب</h5>
+                            <p><strong>الخدمة:</strong> <span id="summary-service"></span></p>
+                            <p><strong>العنوان:</strong> <span id="summary-location"></span></p>
+                            <p><strong>الوقت:</strong> <span id="summary-datetime"></span></p>
+                            <p><strong>الاسم:</strong> <span id="summary-name"></span></p>
+                            <p><strong>الهاتف:</strong> <span id="summary-phone"></span></p>
+                        </div>
+                        <p class="note">سيتم التواصل معك قريبًا من قبل أحد الفنيين لتأكيد الموعد والتفاصيل.</p>
+                    </div>
+                </div>
+
+
+                <div class="modal-navigation">
+                    <button type="button" class="prev-btn" style="display: none;">السابق</button>
+                    <button type="button" class="next-btn">التالي</button>
+                    <button type="submit" class="submit-btn" style="display: none;">تأكيد وإرسال الطلب</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="script.js" type="module"></script>
+</body>
+</html>
